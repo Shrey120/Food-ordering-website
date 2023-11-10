@@ -1,39 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Menu from "./MenuApi";
 import Card from "./Card";
 import Header from "./Header";
-
-const uniqueList = [
-  ...new Set(
-    Menu.map((curele) => {
-      return curele.category;
-    })
-  ),
-  "All",
-];
+import Order from "../Components/Order";
+import { Cartcontext } from "../Context/CartContext";
 
 export default function Restraunt() {
-  const [menu, setmenu] = useState(Menu);
-  const [list, setlist] = useState(uniqueList);
-
-  const filteritem = (category) => {
-    const updatedlist = Menu.filter((curele) => {
-      return curele.category === category;
-    });
-    category === "All" ? setmenu(Menu) : setmenu(updatedlist);
-  };
+  const { overlay } = useContext(Cartcontext);
 
   return (
     <>
-      <Header
-        filteritem={filteritem}
-        list={list}
-        id={Menu.id}
-      />
-      <Card
-        menu={menu}
-        id={Menu.id}
-      />
+      {overlay && <Order />}
+      <Header />
+      <Card />
     </>
   );
 }
