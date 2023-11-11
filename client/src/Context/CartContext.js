@@ -1,6 +1,13 @@
 import React, { createContext, useState } from "react";
 import Menu from "../Components/MenuApi";
 import Restraunt from "../Components/Restraunt";
+import { loadStripe } from "@stripe/stripe-js";
+import {
+  PaymentElement,
+  Elements,
+  useStripe,
+  useElements,
+} from "@stripe/react-stripe-js";
 
 export const Cartcontext = createContext(Menu);
 
@@ -11,9 +18,30 @@ export default function CartcontextProvider() {
   const [itemprice, setitemprice] = useState(0);
   const [itemcat, setitemcat] = useState("All");
 
+  const onCheckout = async (data) => {
+    const stripe = await loadStripe(
+      "pk_test_51NdCYxSERmmQORdUn0z3ZPr2UAKV1UibQ2wrvVcCAxfNLzCnAPfvTptZnKVK4WE2g5MCoiwcPhncQImwZTMen48j00lZ6rPofp"
+    );
+    const body = {
+      products: data,
+    };
+    const response = await fetch("http://localhost:7000/api/create-checkout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    const session = await response.json();
+
+    const result = stripe.redirectToCheckout({
+      sessionId: session.id,
+    });
+
+    if (result.error) {
+      console.log(result.error);
+    }
+  };
   const addHandler = () => {
     setoverlay(!overlay);
-    console.log(overlay);
   };
 
   const filteritem = (ele) => {
@@ -28,7 +56,7 @@ export default function CartcontextProvider() {
     });
     setmenu(newList);
     setquant(quant + 1);
-    setitemprice(itemprice + parseInt(curr.price));
+    setitemprice(itemprice + curr.price);
   };
 
   const decreament = (curr) => {
@@ -41,7 +69,7 @@ export default function CartcontextProvider() {
     setmenu(newList);
     if (curr.quantity > 0) {
       setquant(quant - 1);
-      setitemprice(itemprice - parseInt(curr.price));
+      setitemprice(itemprice - curr.price);
     }
   };
 
@@ -58,6 +86,7 @@ export default function CartcontextProvider() {
           quant,
           itemcat,
           itemprice,
+          onCheckout,
         }}>
         <Restraunt />
       </Cartcontext.Provider>

@@ -4,7 +4,7 @@ const Menu = [
     image: "images/maggi.jpg",
     name: "maggi",
     category: "Breakfast",
-    price: "12₹",
+    price: 12,
     quantity: 0,
     description:
       "I love Maggi realy oo yues  Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
@@ -15,7 +15,7 @@ const Menu = [
     image: "images/allupakoida.jpg",
     name: "allu pakoida",
     category: "Evening",
-    price: "20₹",
+    price: 20,
     quantity: 0,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
@@ -25,7 +25,7 @@ const Menu = [
     image: "images/corn.jpg",
     name: "corn",
     category: "Breakfast",
-    price: "10₹",
+    price: 10,
     quantity: 0,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
@@ -35,7 +35,7 @@ const Menu = [
     image: "../images/chola.jpg",
     name: "chola",
     category: "Lunch",
-    price: "50₹",
+    price: 50,
     quantity: 0,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
@@ -45,7 +45,7 @@ const Menu = [
     image: "../images/pizza.jpg",
     name: "pizza",
     category: "Evening",
-    price: "80₹",
+    price: 80,
     quantity: 0,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
@@ -55,7 +55,7 @@ const Menu = [
     image: "../images/nonvegthali.jpg",
     name: "Non-Veg Thali",
     category: "Dinner",
-    price: "180₹",
+    price: 180,
     quantity: 0,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
@@ -65,7 +65,7 @@ const Menu = [
     image: "../images/sweet.jpg",
     name: "Sweets",
     category: "Dinner",
-    price: "60₹",
+    price: 60,
     quantity: 0,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
@@ -75,7 +75,7 @@ const Menu = [
     image: "../images/rajmarice.jpg",
     name: "Rajma Rice",
     category: "Lunch",
-    price: "60₹",
+    price: 60,
     quantity: 0,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
@@ -85,7 +85,7 @@ const Menu = [
     image: "../images/samosa.jpg",
     name: "samaso",
     category: "Evening",
-    price: "10₹",
+    price: 10,
     quantity: 0,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",

@@ -254,12 +254,12 @@ img {
 
 .cross {
     background: transparent;
-    font-size: 40px;
+    font-size: 35px;
     cursor: pointer;
-    display: flex;
-    justify-content: flex-end;
-    margin: 0 0px -40px 0px;
-    padding-right: 5px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 5px;
 }
 
 .table th {
@@ -306,4 +306,11 @@ img {
     border-radius: 50px;
     border: 5px solid white;
     background-color: rgb(255, 255, 255);
+}
+
+.checkout {
+    position: absolute;
+    right: 0;
+    margin: 1px 20px 0px 0;
+    padding: 2px;
 }
